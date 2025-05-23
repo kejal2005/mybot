@@ -91,3 +91,4 @@ static/build/
 htmlcov/
 .pytest_cache/
 test_*.py 
+.vercel
