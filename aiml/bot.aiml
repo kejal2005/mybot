@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" encoding="UTF-8">
+
+    <!-- GREETINGS -->
+    <category>
+        <pattern>HELLO</pattern>
+        <template>Hello! How can I assist you today?</template>
+    </category>
+
+    <category>
+        <pattern>HI</pattern>
+        <template>Hi there! What would you like to talk about?</template>
+    </category>
+
+    <category>
+        <pattern>GOOD MORNING</pattern>
+        <template>Good morning! Hope you have a wonderful day ahead.</template>
+    </category>
+
+    <!-- BOT INFO -->
+    <category>
+        <pattern>WHAT IS YOUR NAME</pattern>
+        <template>My name is ChatBot, your friendly assistant!</template>
+    </category>
+
+    <category>
+        <pattern>WHO MADE YOU</pattern>
+        <template>I was created by a developer using Python and AIML!</template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS AIML</pattern>
+        <template>AIML stands for Artificial Intelligence Markup Language. It helps me understand and respond to you!</template>
+    </category>
+
+    <!-- API TRIGGERS -->
+    <category>
+        <pattern>TELL ME A JOKE</pattern>
+        <template>
+            <think><set name="topic">joke</set></think>
+            Let me find a joke for you...
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS THE NEWS</pattern>
+        <template>
+            <think><set name="topic">news</set></think>
+            Let me check the news...
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS THE WEATHER</pattern>
+        <template>
+            <think><set name="topic">weather</set></think>
+            Let me check the weather...
+        </template>
+    </category>
+
+    <!-- GEMINI TRIGGERS -->
+    <category>
+        <pattern>EXPLAIN *</pattern>
+        <template>
+            <think><set name="topic">gemini</set></think>
+            Let me think about that...
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS *</pattern>
+        <template>
+            <think><set name="topic">gemini</set></think>
+            I'll look that up for you...
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW DOES * WORK</pattern>
+        <template>
+            <think><set name="topic">gemini</set></think>
+            Let me explain how that works...
+        </template>
+    </category>
+
+    <!-- SIMPLIFIED CONVERSATION -->
+    <category>
+        <pattern>HOW ARE YOU</pattern>
+        <template>I'm doing great, thank you for asking! How can I help you today?</template>
+    </category>
+
+    <category>
+        <pattern>I AM FINE</pattern>
+        <template>Glad to hear that! 😊</template>
+    </category>
+
+    <category>
+        <pattern>GOODBYE</pattern>
+        <template>Goodbye! Have a great day!</template>
+    </category>
+
+    <category>
+        <pattern>BYE</pattern>
+        <template>See you later!</template>
+    </category>
+
+    <!-- SIMPLIFIED FALLBACK -->
+    <category>
+        <pattern>*</pattern>
+        <template>
+            <think><set name="topic">gemini</set></think>
+            Let me think about that...
+        </template>
+    </category>
+
+</aiml>

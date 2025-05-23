@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Gradient Header with New Name -->
+        <header class="chat-header">
+            <div class="header-content">
+                <div class="bot-avatar">
+                    <div class="avatar-circle">
+                        <span class="ai-icon">AI</span>
+                    </div>
+                </div>
+                <div class="header-info">
+                    <h1>AI Assistant</h1>
+                    <p class="status"><span class="status-indicator"></span> Online</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="pause-btn" onclick="togglePause()" title="Pause/Resume Chat">
+                    <i class="fas fa-pause"></i>
+                </button>
+                <button class="stop-btn" onclick="stopSpeech()" title="Stop Speech">
+                    <i class="fas fa-stop"></i>
+                </button>
+                <div class="voice-settings">
+                    <select id="voice-select" class="voice-select" title="Select Voice">
+                        <option value="">Select Voice</option>
+                    </select>
+                    <select id="language-select" class="language-select" title="Select Language">
+                        <option value="en-US">English (US)</option>
+                        <option value="en-GB">English (UK)</option>
+                        <option value="es-ES">Spanish</option>
+                        <option value="fr-FR">French</option>
+                        <option value="de-DE">German</option>
+                        <option value="it-IT">Italian</option>
+                        <option value="ja-JP">Japanese</option>
+                        <option value="ko-KR">Korean</option>
+                        <option value="zh-CN">Chinese</option>
+                        <option value="hi-IN">Hindi</option>
+                    </select>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Chat Container with New Message Design -->
+        <div id="chat-container">
+            <div id="chat-box">
+                <div class="welcome-message">
+                    <div class="welcome-card">
+                        <h2>👋 Hi there! I am Your Assistant</h2>
+                        <p>Your personal AI assistant ready to help with any questions.</p>
+                        <div class="quick-suggestions">
+                            <button onclick="quickQuestion('Explain quantum physics')">Explain quantum physics</button>
+                            <button onclick="quickQuestion('Tell me a joke')">Tell me a joke</button>
+                            <button onclick="quickQuestion('How does AI work?')">How does AI work?</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Enhanced Input Area -->
+            <div id="input-area">
+                <div class="input-wrapper">
+                    <input type="text" id="user-input" placeholder="Ask me anything..." autocomplete="off">
+                    <div class="input-buttons">
+                        <button class="action-btn voice-btn" onclick="startVoiceInput()" title="Voice Input">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button class="action-btn send-btn" onclick="sendMessage()" title="Send Message">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                <p class="input-hint">Press Enter to send, Shift+Enter for new line</p>
+            </div>
+        </div>
+
+        <!-- Footer with Animation -->
+        <footer class="chat-footer">
+            <div class="footer-content">
+                <p>Powered by <span class="powered-by">Kejal</span></p>
+                <div class="tech-stack">
+                    <span class="tech-icon"><i class="fab fa-python"></i></span>
+                    <span class="tech-icon"><i class="fas fa-robot"></i></span>
+                    <span class="tech-icon"><i class="fab fa-google"></i></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Confetti Effect Container -->
+    <div id="confetti-container"></div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+</body>
+</html>

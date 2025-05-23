@@ -1,0 +1,74 @@
+# Python Dependencies
+flask==3.0.2
+flask-cors==4.0.0
+google-generativeai==0.3.2
+python-dotenv==1.0.1
+requests==2.31.0
+aiml==0.9.2
+
+# Setup Instructions:
+
+# 1. Create a Virtual Environment (Optional but recommended)
+# Windows:
+# python -m venv venv
+# venv\Scripts\activate
+
+# Linux/Mac:
+# python3 -m venv venv
+# source venv/bin/activate
+
+# 2. Install Dependencies
+# pip install -r requirements.txt
+
+# 3. Create a .env file in the project root with your Gemini API key:
+# GEMINI_API_KEY=your_api_key_here
+
+# 4. Create an 'aiml' folder in the project root and add your AIML files
+
+# 5. Run the Application
+# python app.py
+
+# 6. Access the Chatbot
+# Open your browser and go to: http://localhost:5000
+
+# Project Structure:
+# ├── app.py                 # Main Flask application
+# ├── requirements.txt       # Project dependencies
+# ├── .env                  # Environment variables
+# ├── aiml/                 # AIML files directory
+# ├── static/
+# │   ├── css/
+# │   │   └── style.css    # Stylesheet
+# │   └── js/
+# │       └── script.js    # Frontend JavaScript
+# └── templates/
+#     └── index.html       # Main HTML template
+
+# Features:
+# - Gemini AI integration
+# - AIML-based responses
+# - Voice input/output
+# - Dark/Light theme
+# - Pause/Stop functionality
+# - Real-time typing indicators
+# - Message timestamps
+# - Quick question suggestions
+# - Responsive design
+
+# Troubleshooting:
+# 1. If you get a "404 models/gemini-pro is not found" error:
+#    - Check your Gemini API key in .env file
+#    - Verify internet connection
+#    - Ensure google-generativeai package is properly installed
+
+# 2. If voice features don't work:
+#    - Check browser compatibility (Chrome recommended)
+#    - Ensure microphone permissions are granted
+#    - Verify speech synthesis API support
+
+# 3. If AIML responses aren't working:
+#    - Verify AIML files are in the correct directory
+#    - Check file permissions
+#    - Ensure AIML files are properly formatted
+
+# Note: This project requires Python 3.8 or higher 
