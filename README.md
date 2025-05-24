@@ -66,4 +66,11 @@ python app.py
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+# Google Gemini API Key
+GEMINI_API_KEY=your_api_key_here
+
+# Flask Configuration
+FLASK_ENV=development
+FLASK_APP=app.py 

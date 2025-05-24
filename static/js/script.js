@@ -9,6 +9,21 @@ let jsConfetti = null;
 let selectedVoice = null;
 let selectedLanguage = 'en-US';
 
+// Initialize MutationObserver for chat box changes
+const chatObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    });
+});
+
+// Start observing the chat box
+chatObserver.observe(chatBox, {
+    childList: true,
+    subtree: true
+});
+
 // Initialize JSConfetti
 if (typeof JSConfetti !== 'undefined') {
     jsConfetti = new JSConfetti();
@@ -304,14 +319,6 @@ if (chatBox.children.length <= 1) {
         addMessage("Welcome back! How can I assist you today?", "bot");
     }, 1000);
 }
-
-// Smooth scroll to bottom
-chatBox.addEventListener('DOMNodeInserted', () => {
-    chatBox.scrollTo({
-        top: chatBox.scrollHeight,
-        behavior: 'smooth'
-    });
-});
 
 // Initialize voices when the page loads
 document.addEventListener('DOMContentLoaded', () => {
